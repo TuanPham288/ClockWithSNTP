@@ -45,6 +45,7 @@ public class ClockActivity extends Activity {
 		 Date currentNetworkDate = new Date(currentNetworkTime);
 		 ((ClockView)findViewById(R.id.analogClock)).setTime(currentNetworkDate.getHours(),
 				 currentNetworkDate.getMinutes(), currentNetworkDate.getSeconds());
+		 findViewById(R.id.analogClock).invalidate();
 		 long remainTimeSync = TIME_TO_SYN_SERVER_TIME - (new Date().getTime() - timeGetNetworkServer);
 		  
 		 ((TextView)findViewById(R.id.txtCountDownSyn)).setText(df.format(remainTimeSync));
