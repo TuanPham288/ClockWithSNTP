@@ -35,6 +35,7 @@ public class ClockActivity extends Activity {
 	long timeGetNetworkServer =0;
 	Handler timerHandler = new Handler();
 	TimerRunnable timerRunnable = new TimerRunnable();
+	private boolean isReqestingTime = false;
 	
 	
 	private void showCurrentNetworkTime() {
@@ -70,7 +71,11 @@ public class ClockActivity extends Activity {
 	}
 
 	private void requestServerTime() {
-		new AsyncTask<Void, Void, Long>() {
+		if(isReqestingTime){
+			return;
+		}
+		isReqestingTime  = true;
+		AsyncTask<Void, Void, Long> requestTimeTask = new AsyncTask<Void, Void, Long>() {
 			@Override
 			protected Long doInBackground(Void... params) {
 				timeGetNetworkServer = new Date().getTime();
@@ -90,7 +95,9 @@ public class ClockActivity extends Activity {
 				super.onPostExecute(now);
 				showCurrentNetworkTime();
 				runTimer();
+				isReqestingTime = false;
 			}			
-		}.execute();
+		};
+		requestTimeTask.execute();
 	}
 }
