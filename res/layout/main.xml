@@ -2,46 +2,62 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:gravity="center"
     android:orientation="vertical" >
-    
-    <TextView        
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GMT Server Time"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-    
-    <com.assignment.android.ClockView
-        android:id="@+id/analogClock"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"/>
-    
-    <TextView
-        android:id="@+id/txtNormalClock"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-    
-    <TextView    android:layout_marginTop="30dp"    
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Next Sync Remain"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-    
-    <TextView
-        android:id="@+id/txtCountDownSyn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <Button
-        android:id="@+id/btnSync"
-        android:layout_width="127dp"
-        android:layout_height="wrap_content"
-        android:text="Resync Now"
-        android:textAppearance="?android:attr/textAppearanceLarge" />   
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"        
+        android:layout_weight="1"
+        android:gravity="center_horizontal|bottom"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GMT Server Time"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <com.assignment.android.ClockView
+            android:id="@+id/analogClock"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp" />
+
+        <TextView
+            android:id="@+id/txtNormalClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>    
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="bottom|center_horizontal"
+        android:layout_weight="1"        
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Next Sync Remain"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/txtCountDownSyn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Button
+            android:id="@+id/btnSync"
+            android:layout_width="127dp"
+            android:layout_height="wrap_content"
+            android:text="Resync Now"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
 
 </LinearLayout>
